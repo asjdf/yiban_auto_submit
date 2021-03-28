@@ -44,7 +44,7 @@ class YiBan:
         self.name = r["data"]["user"]["userName"]
         for i in r["data"]["hotApps"]: # 动态取得iapp号 20201117更新
             if i["name"] == "易班校本化":
-                self.iapp = re.findall(r"(iapp.*)\?", i["url"])[0]
+                self.iapp = 'iapp' + str(i['app_id'])
         return r
     def auth(self):
         params = {
